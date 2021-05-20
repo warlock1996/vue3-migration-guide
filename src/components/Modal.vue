@@ -1,18 +1,24 @@
 <template>
-  <transition name="fade">
-    <div v-if="visible" class="modal">
-      <h1 v-highlight>I Am A Modal</h1>
+    <div v-bind="$attrs">
+      asd
     </div>
-  </transition>
+    <div v-if="visible">
+      <h1 >I Am A Modal</h1>
+    </div>
 </template>
 
 <script>
 export default {
+  inheritAttrs: false,
   props: {
     visible: {
       type: Boolean,
       default: true,
     },
+  },
+  emits: ['click'],
+  mounted () {
+    console.log(this.$attrs)
   },
   directives: {
     highlight: {
