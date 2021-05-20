@@ -21,9 +21,6 @@ export default {
     inputVal: String,
     textArea: String,
   },
-  mounted () {
-    console.log(this.$attrs)
-  }
 };
 </script>
 

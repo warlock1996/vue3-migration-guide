@@ -22,15 +22,6 @@ export default {
       },
     },
   },
-  mounted() {
-    console.log("[Mounted]");
-  },
-  beforeUnmount() {
-    console.log("[BeforeUnmount]");
-  },
-  unmounted() {
-    console.log("[Unmounted]");
-  },
 };
 </script>
 

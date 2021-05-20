@@ -5,8 +5,10 @@ import store from "./store";
 import axios from "axios";
 
 const app = createApp(App);
+console.log(app);
 app
   .use(store)
   .use(router)
   .mount("#app");
+  
 app.config.globalProperties.$axios = axios;
