@@ -10,7 +10,7 @@
       <slot></slot>
     </div>
     <div class="card__footer">
-      <slot name="footer" :func="(v) => v.toUpperCase()"></slot>
+      <slot name="footer"></slot>
     </div>
   </div>
 </template>
