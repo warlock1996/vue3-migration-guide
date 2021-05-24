@@ -1,7 +1,7 @@
 <template>
   <base-card>
     <input v-model.lazy="username" type="text" />
-    <h1>Search:</h1>
+    <typography tag="h1" class="typography">The Quranic Logic</typography>
     <input v-model="search" type="text" />
     <user-repositories :user="username" :search-query="search" />
   </base-card>
@@ -10,6 +10,7 @@
 <script>
 import { defineAsyncComponent, onMounted, provide, readonly, ref } from "vue";
 import fruitsMixin from "@/mixins/fruits";
+import Typography from "@/functional/Typography"
 export default {
   name: "Home",
   mixins: [fruitsMixin],
@@ -29,9 +30,11 @@ export default {
     };
   },
   mounted() {
-    console.log("this.apple", this.apple);
+    console.log(this.$t('greetings.hello'))
+    console.log(this.$t('greetings.hi.do'))
   },
   components: {
+    Typography,
     BaseCard: defineAsyncComponent(() => import("@/components/BaseCard.vue")),
     UserRepositories: defineAsyncComponent(() =>
       import("@/components/UserRepositories.vue")

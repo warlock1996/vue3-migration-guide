@@ -23,9 +23,6 @@ export default {
       repos,
       searchQuery
     );
-    onMounted(() => {
-      console.log(ul.value);
-    });
 
     return {
       repos: filteredBySearchQuery,
