@@ -3,27 +3,24 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import axios from "axios";
-import { h } from "vue";
 
 import i18n from "./plugins/i18n.js";
+import plugin from "./plugins/plugin.js";
 
-const app = createApp({
-  render(h) {
-    return <h1>Hi</h1>;
-  },
-});
+const app = createApp(App);
 app
   .use(store)
   .use(router)
   .mount("#app");
 
-// app.use(i18n, {
-//   greetings: {
-//     hello: "Say Hello !",
-//     hi: {
-//       do: "something",
-//     },
-//   },
-// });
+  app.use(plugin);
+  app.use(i18n, {
+    greetings: {
+      hello: "Say Hello !",
+      hi: {
+        do: "something",
+      },
+    },
+  });
 
-// app.config.globalProperties.$axios = axios;
+app.config.globalProperties.$axios = axios;

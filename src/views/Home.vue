@@ -10,7 +10,7 @@
 <script>
 import { defineAsyncComponent, onMounted, provide, readonly, ref } from "vue";
 import fruitsMixin from "@/mixins/fruits";
-import Typography from "@/functional/Typography"
+import Typography from "@/functional/Typography";
 export default {
   name: "Home",
   mixins: [fruitsMixin],
@@ -29,9 +29,12 @@ export default {
       search: "",
     };
   },
+  inject: ['$Toast'],
   mounted() {
-    console.log(this.$t('greetings.hello'))
-    console.log(this.$t('greetings.hi.do'))
+    this.$Toast.show("some toast content");
+    console.log(this.$Toast);
+    console.log(this.$t("greetings.hello"));
+    console.log(this.$t("greetings.hi.do"));
   },
   components: {
     Typography,

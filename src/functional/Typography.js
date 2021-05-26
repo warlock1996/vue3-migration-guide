@@ -1,7 +1,6 @@
 import { h } from "vue";
 
 const Typography = (props, ctx) => {
-  console.log(props, ctx);
   return h(`${props.tag}`, { ...props }, ctx.slots);
 };
 
